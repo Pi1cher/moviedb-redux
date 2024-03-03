@@ -37,9 +37,9 @@ const SearchList: FC<IProps> = () => {
 
     return (
         <div>
-            <div>
+            <h1>
                 Search result "{query.get('query')}"
-            </div>
+            </h1>
 
             <div className={css.MovieList}>
                 {movies.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}

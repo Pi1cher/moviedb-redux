@@ -7,6 +7,7 @@ import {useLoaderData} from "react-router-dom";
 import {GenreBadge} from "../GenreContainer";
 import css from './MovieInfo.module.css'
 import {BackButton} from "../NavigateButtonsContainer";
+import {StarsRating} from "../StarsRatingContainer";
 
 interface IProps extends PropsWithChildren {
 
@@ -32,7 +33,7 @@ const MovieInfo: FC<IProps> = () => {
                 <hr/>
                 <h3>Description:</h3>
                 <p>{overview}</p>
-                <div>{vote_average}</div>
+                <StarsRating size={'large'} rating={vote_average}/>
             </div>
         </div>
     );
