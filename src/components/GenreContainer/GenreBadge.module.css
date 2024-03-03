@@ -1,0 +1,13 @@
+.GenderBadge span{
+    background-color: #A43820 !important;
+    margin: 0 1px;
+}
+.GenderBadge span:hover {
+    background-color: #763626 !important;
+}
+
+.GenderBadge span:active {
+    background-color: #F1D3B2 !important;
+}
+
+

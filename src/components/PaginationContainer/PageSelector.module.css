@@ -1,0 +1,52 @@
+.PageSelector{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    margin: 25px auto;
+    width: 400px;
+
+
+}
+
+.PageSelector button{
+    border: solid 1px #A43820;
+    height: 40px;
+    width: 35px;
+    font-size: 30px;
+    font-weight: 800;
+    padding: 0 0 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F1D3B2;
+    background-color: #A43820;
+
+
+}
+
+.PageSelector button:hover {
+    color: #A43820;
+    background-color: #F1D3B2;
+}
+.PageSelector p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    width: 35px;
+    height: 40px;
+    border: solid 1px #A43820;
+    padding-top: 1px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #763626;
+}
+
+.PageSelector .prev {
+    border-radius: 10px 0 0 10px;
+}
+
+.PageSelector .next {
+    border-radius: 0 10px 10px 0;
+}

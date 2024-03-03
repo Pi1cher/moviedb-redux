@@ -1,0 +1,25 @@
+.MovieListCard img{
+    width: 250px;
+    height: 350px;
+    transition: 0.5s;
+}
+
+
+.MovieListCard div{
+    width: 250px;
+    max-width: 250px;
+    font-size: 20px;
+    color: #763626;
+
+}
+
+.MovieListCard a{
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    transition: 0.5s;
+}
+
+.MovieListCard img:hover{
+    transform: scale(1.03);
+}

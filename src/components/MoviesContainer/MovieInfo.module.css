@@ -1,0 +1,25 @@
+.MovieInfo {
+    max-width: 1100px;
+    margin-top: 20px;
+    display: flex;
+}
+
+.Genres {
+    position: relative;
+    top: 10px;
+    left: -20px;
+    font-size: 20px;
+}
+
+.MovieInfo h1 {
+    font-weight: 800;
+    font-size: 50px;
+}
+
+.MovieInfo h3 {
+    font-weight: 700;
+}
+.MovieInfo p {
+    font-size: 20px;
+    text-align: justify;
+}

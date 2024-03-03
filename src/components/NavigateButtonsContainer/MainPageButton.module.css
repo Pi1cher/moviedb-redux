@@ -1,0 +1,23 @@
+.MainPageButton button{
+    text-decoration: none;
+    font-size: 25px;
+    color: #A43820;
+    background-color: #F1D3B2;
+    border-radius: 10px;
+    font-weight: 800;
+    border: none;
+    height: 40px;
+}
+
+.MainPageButton button:hover {
+    color: #F1D3B2;
+    background-color: #A43820;
+}
+.MainPageButton button:active{
+    background-color: #763626;
+}
+
+.MainPageButton button:disabled:hover{
+    color: #A43820;
+    background-color: #F1D3B2;
+}

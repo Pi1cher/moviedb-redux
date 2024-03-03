@@ -1,0 +1,18 @@
+.BackButton {
+    position: absolute;
+    margin: 0 0 0 -75px;
+}
+.BackButton button {
+    border: solid 1px #763626;
+    border-radius: 10px;
+    color: #F1D3B2;
+    background-color: #763626;
+    height: 30px;
+    width: 70px;
+}
+
+.BackButton button:hover {
+    color: #763626;
+    background-color: #F1D3B2;
+
+}

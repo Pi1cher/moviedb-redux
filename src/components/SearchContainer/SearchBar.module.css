@@ -1,0 +1,29 @@
+.SearchBar form {
+    width: 400px;
+
+}
+
+
+.SearchBar input{
+    height: 40px;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    padding: 0 0 0 10px;
+}
+
+.SearchBar button{
+    height: 40px;
+    border-radius: 0 10px 10px 0;
+    border: none;
+    color: #A43820;
+    background-color: #F1D3B2;
+}
+
+.SearchBar button:hover {
+    color: #F1D3B2;
+    background-color: #A43820;
+}
+
+.SearchBar button:active{
+    background-color: #763626;
+}
