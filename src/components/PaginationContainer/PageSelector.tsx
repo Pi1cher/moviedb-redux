@@ -1,5 +1,4 @@
 import {FC, PropsWithChildren} from 'react';
-import {SetURLSearchParams} from "react-router-dom";
 
 import css from './PageSelector.module.css'
 import {IPrevNext} from "../../interfaces";

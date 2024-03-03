@@ -2,3 +2,8 @@
     border: solid 2px #46211A;
     border-radius: 10px;
 }
+
+.dark img {
+    border: solid 2px #F1D3B2;
+    border-radius: 10px;
+}

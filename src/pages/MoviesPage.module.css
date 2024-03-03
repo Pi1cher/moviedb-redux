@@ -3,3 +3,9 @@
     justify-content: center;
     background-color: #F1D3B2;
 }
+.dark {
+    display: flex;
+    justify-content: center;
+    background-color: #46211A;
+
+}

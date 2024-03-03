@@ -3,4 +3,13 @@
     flex-flow: wrap;
     justify-content: space-around;
     max-width: 1100px;
+    color: #46211A;
+}
+
+.dark {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+    max-width: 1100px;
+    color: #F1D3B2;
 }

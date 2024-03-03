@@ -13,7 +13,7 @@ interface IProps extends PropsWithChildren {
 
 const SearchList: FC<IProps> = () => {
 
-    const {query} = useAppContext();
+    const {query, theme} = useAppContext();
 
     const [movies, setMovies] = useState<IMovie[]>([]);
     const [prevNext, setPrevNext] = useState<IPrevNext>({prev: null, next: null});
@@ -37,7 +37,7 @@ const SearchList: FC<IProps> = () => {
 
     return (
         <div>
-            <h1>
+            <h1 className={theme ? css.MovieList : css.dark}>
                 Search result "{query.get('query')}"
             </h1>
 

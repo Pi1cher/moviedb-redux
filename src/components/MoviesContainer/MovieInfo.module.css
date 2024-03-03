@@ -2,7 +2,6 @@
     max-width: 1100px;
     margin-top: 20px;
     display: flex;
-
 }
 
 .Genres {
@@ -23,4 +22,27 @@
 .MovieInfo p {
     font-size: 20px;
     text-align: justify;
+}
+
+.dark {
+    max-width: 1100px;
+    margin-top: 20px;
+    color: #F1D3B2;
+    display: flex;
+}
+
+.dark h1 {
+    font-weight: 800;
+    font-size: 50px;
+
+}
+
+.dark h3 {
+    font-weight: 700;
+
+}
+.dark p {
+    font-size: 20px;
+    text-align: justify;
+
 }

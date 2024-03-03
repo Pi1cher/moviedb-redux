@@ -5,10 +5,11 @@ import css from './MoviesPage.module.css'
 
 const MoviesPage = () => {
 
-    const {query} = useAppContext();
+    const {query, theme} = useAppContext();
 
     return (
-        <div className={css.MoviesPage}>
+        <div className={theme ? css.MoviesPage : css.dark}>
+
             {(query.get('query') == null) ? <MoviesList/>:<SearchList/>}
         </div>
     );

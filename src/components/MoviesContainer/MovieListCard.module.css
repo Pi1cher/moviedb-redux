@@ -5,13 +5,25 @@
 }
 
 
-.MovieListCard div{
+.MovieListCard {
     width: 250px;
     max-width: 250px;
     font-size: 20px;
     color: #763626;
+    margin: 0;
 
 }
+
+.dark {
+    width: 250px;
+    max-width: 250px;
+    font-size: 20px;
+    color: #F1D3B2;
+    margin: 0;
+
+}
+
+
 
 .MovieListCard a{
     text-decoration: none;
