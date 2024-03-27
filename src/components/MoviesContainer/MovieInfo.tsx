@@ -1,14 +1,13 @@
-import {FC, PropsWithChildren} from 'react';
+import {FC, PropsWithChildren, useEffect} from 'react';
 
-
-import {IMovie} from "../../interfaces";
 import {PosterPreview} from "../PosterContainer";
-import {useLoaderData} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import {GenreBadge} from "../GenreContainer";
 import css from './MovieInfo.module.css'
 import {BackButton} from "../NavigateButtonsContainer";
 import {StarsRating} from "../StarsRatingContainer";
-import {useAppSelector} from "../../hooks";
+import {useAppDispatch, useAppSelector} from "../../hooks";
+import {movieInfoActions} from "../../store";
 
 interface IProps extends PropsWithChildren {
 
@@ -17,13 +16,20 @@ interface IProps extends PropsWithChildren {
 const MovieInfo: FC<IProps> = () => {
 
     const {theme} = useAppSelector(state => state.theme);
+    const {movieDetails} = useAppSelector(state => state.movieInfo);
+    const dispatch = useAppDispatch();
+    const {id} = useParams();
 
-    const movie = useLoaderData() as { data:IMovie };
+    useEffect(() => {
+        dispatch(movieInfoActions.byId({id: parseInt(id)}))
+    }, [dispatch, id])
+
     window.scrollTo(0, 0)
 
-    const {title,overview,genres,poster_path, vote_average, tagline, runtime} = movie.data;
+    const {title,overview,genres,poster_path, vote_average, tagline, runtime} = movieDetails;
 
     return (
+
         <div className={theme ? css.MovieInfo : css.dark}>
             <BackButton/>
             <PosterPreview poster_path={poster_path} title={title}/>
