@@ -1,10 +1,9 @@
 import {FC, PropsWithChildren} from 'react';
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useSearchParams} from "react-router-dom";
 import {SubmitHandler, useForm} from "react-hook-form";
 
 
 import css from './SearchBar.module.css'
-import {useAppContext} from "../../hooks";
 
 
 interface IProps extends PropsWithChildren {
@@ -16,7 +15,7 @@ const SearchBar: FC<IProps> = () => {
 
     const {register, handleSubmit, reset} = useForm();
 
-    const {setQuery} = useAppContext();
+    const [ , setQuery] = useSearchParams();
     const navigate = useNavigate();
 
     const save:SubmitHandler<any> = (request:{searchRequest:string}) => {

@@ -8,7 +8,7 @@ import {GenreBadge} from "../GenreContainer";
 import css from './MovieInfo.module.css'
 import {BackButton} from "../NavigateButtonsContainer";
 import {StarsRating} from "../StarsRatingContainer";
-import {useAppContext} from "../../hooks";
+import {useAppSelector} from "../../hooks";
 
 interface IProps extends PropsWithChildren {
 
@@ -16,8 +16,9 @@ interface IProps extends PropsWithChildren {
 
 const MovieInfo: FC<IProps> = () => {
 
-    const {theme} = useAppContext();
-    const movie= useLoaderData() as { data:IMovie };
+    const {theme} = useAppSelector(state => state.theme);
+
+    const movie = useLoaderData() as { data:IMovie };
     window.scrollTo(0, 0)
 
     const {title,overview,genres,poster_path, vote_average, tagline, runtime} = movie.data;

@@ -1,13 +1,13 @@
-import {FC, PropsWithChildren, useEffect, useState} from 'react';
-import {useSearchParams} from "react-router-dom";
+import {FC, PropsWithChildren, useEffect} from 'react';
 
-import {IMovie, IPrevNext} from "../../interfaces";
-import {movieService} from "../../services";
+
 import {MoviesListCard} from "./MoviesListCard";
 import css from './MovieList.module.css'
 import {PageSelector} from "../PaginationContainer";
 import {Genres} from "../GenreContainer";
-import {useAppContext} from "../../hooks";
+import {useAppDispatch, useAppSelector} from "../../hooks";
+import {movieListActions} from "../../store";
+import {useSearchParams} from "react-router-dom";
 
 interface IProps extends PropsWithChildren {
 
@@ -15,28 +15,18 @@ interface IProps extends PropsWithChildren {
 
 const MoviesList: FC<IProps> = () => {
 
-    const {query} = useAppContext();
+    const {results: movies} = useAppSelector(state => state.movieList);
 
+    const dispatch = useAppDispatch();
 
-    const [movies, setMovies] = useState<IMovie[]>([]);
-    const [prevNext, setPrevNext] = useState<IPrevNext>({prev: null, next: null});
-
+    const [query, ] = useSearchParams({page:'1'})
+    const page = query.get('page');
+    const with_genres = query.get('with_genres');
 
 
     useEffect(() => {
-        movieService.getAll(query.get('page'), query.get('with_genres')).then(({data}) => {
-            setMovies(data.results)
-            if (data.page === 1) {
-                setPrevNext({prev: null, next: data.page + 1})
-            } else if (data.total_pages === data.page) {
-                setPrevNext({prev: data.page - 1, next: null})
-            } else {
-                setPrevNext({prev: data.page - 1, next: data.page + 1})
-
-            }
-            window.scrollTo(0, 0)
-        })
-    }, [query.get('page'), query.get('with_genres')])
+        dispatch(movieListActions.getAll({page, with_genres}))
+    }, [page, with_genres])
 
     return (
         <div>
@@ -45,7 +35,7 @@ const MoviesList: FC<IProps> = () => {
                 {movies.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
             </div>
 
-            <PageSelector prevNext={prevNext}/>
+            <PageSelector/>
         </div>
     );
 };

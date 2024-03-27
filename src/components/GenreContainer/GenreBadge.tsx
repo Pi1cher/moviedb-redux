@@ -3,8 +3,7 @@ import {Badge} from "reactstrap";
 
 import {IGenre} from "../../interfaces";
 import css from './GenreBadge.module.css'
-import {useNavigate} from "react-router-dom";
-import {useAppContext} from "../../hooks";
+import {useNavigate, useSearchParams} from "react-router-dom";
 
 interface IProps extends PropsWithChildren {
     genre: IGenre;
@@ -12,7 +11,7 @@ interface IProps extends PropsWithChildren {
 
 const GenreBadge: FC<IProps> = ({genre}) => {
 
-    const {setQuery} = useAppContext();
+    const [, setQuery] = useSearchParams();
 
 
     const {id, name} = genre;
@@ -20,13 +19,13 @@ const GenreBadge: FC<IProps> = ({genre}) => {
     const navigate = useNavigate();
 
     return (
-        <div className={css.GenderBadge} >
+        <div className={css.GenderBadge}>
             <Badge pill onClick={() => setQuery(prev => {
-                navigate('/movies')
-                prev.set('with_genres', id.toString())
-                prev.set('page', '1')
-                return prev;
-            }
+                    navigate('/movies')
+                    prev.set('with_genres', id.toString())
+                    prev.set('page', '1')
+                    return prev;
+                }
             )}>{name}</Badge>
         </div>
     );

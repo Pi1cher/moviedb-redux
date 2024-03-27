@@ -1,7 +1,8 @@
 import React, {FC, PropsWithChildren} from 'react';
 import {Switch} from "@mui/material";
 
-import {useAppContext} from "../../hooks";
+import {useAppDispatch, useAppSelector} from "../../hooks";
+import {themeActions} from "../../store";
 
 
 interface IProps extends PropsWithChildren {
@@ -10,15 +11,13 @@ interface IProps extends PropsWithChildren {
 
 const ThemeSwitcher: FC<IProps> = () => {
 
-    const {setTheme} = useAppContext();
+    const {theme} = useAppSelector(state => state.theme);
 
-
-
-
+    const dispatch = useAppDispatch();
 
     return (
         <div>
-            <Switch  onChange={(e, c) => setTheme(c)}/>
+            <Switch checked={theme}  onChange={(e, c) => dispatch(themeActions.toggleTheme(c))}/>
         </div>
     );
 };

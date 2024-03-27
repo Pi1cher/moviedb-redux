@@ -1,16 +1,20 @@
 import {FC, PropsWithChildren} from 'react';
 
 import css from './PageSelector.module.css'
-import {IPrevNext} from "../../interfaces";
-import {useAppContext} from "../../hooks";
+
+import {useAppSelector} from "../../hooks";
+import {useSearchParams} from "react-router-dom";
+
 
 interface IProps extends PropsWithChildren {
-    prevNext: IPrevNext;
+
 }
 
-const PageSelector: FC<IProps> = ({prevNext}) => {
+const PageSelector: FC<IProps> = () => {
 
-    const {query, setQuery} = useAppContext();
+    const {prev: prevPage, next: nextPage} = useAppSelector(state => state.movieList);
+
+    const [query, setQuery] = useSearchParams();
 
 
 
@@ -30,9 +34,9 @@ const PageSelector: FC<IProps> = ({prevNext}) => {
     return (
         <div className={css.PageSelector}>
 
-                <button className={css.prev} disabled={!prevNext.prev} onClick={prev}>&lsaquo;</button>
+                <button className={css.prev} disabled={!prevPage} onClick={prev}>&lsaquo;</button>
                 <p>{query.get('page')}</p>
-                <button className={css.next} disabled={!prevNext.next} onClick={next}>&rsaquo;</button>
+                <button className={css.next} disabled={!nextPage} onClick={next}>&rsaquo;</button>
 
         </div>
     );

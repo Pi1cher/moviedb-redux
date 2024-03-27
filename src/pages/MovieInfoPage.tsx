@@ -1,10 +1,12 @@
 import {MovieInfo} from "../components";
 import css from './MoviesInfoPage.module.css'
-import {useAppContext} from "../hooks";
+import {useAppSelector} from "../hooks";
+
 
 const MovieInfoPage = () => {
 
-    const {theme} = useAppContext();
+    const {theme} = useAppSelector(state => state.theme);
+
 
     return (
         <div className={theme ? css.MoviesInfoPage : css.dark}>

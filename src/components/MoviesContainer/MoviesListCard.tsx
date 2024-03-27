@@ -5,7 +5,7 @@ import {PosterPreview} from "../PosterContainer";
 import css from './MovieListCard.module.css'
 import {Link} from "react-router-dom";
 import {StarsRating} from "../StarsRatingContainer";
-import {useAppContext} from "../../hooks";
+import {useAppSelector} from "../../hooks";
 
 interface IProps extends PropsWithChildren {
     movie: IMovie
@@ -13,7 +13,8 @@ interface IProps extends PropsWithChildren {
 
 const MoviesListCard: FC<IProps> = ({movie}) => {
 
-    const {theme} = useAppContext();
+    const {theme} = useAppSelector(state => state.theme);
+
 
     const {id,title,vote_average,poster_path} = movie;
 
