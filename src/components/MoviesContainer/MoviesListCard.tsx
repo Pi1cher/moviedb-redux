@@ -1,10 +1,10 @@
 import {FC, PropsWithChildren} from 'react';
 
 import {IMovie} from "../../interfaces";
-import {PosterPreview} from "../PosterContainer";
+import {PosterPreview} from "../Poster";
 import css from './MovieListCard.module.css'
 import {Link} from "react-router-dom";
-import {StarsRating} from "../StarsRatingContainer";
+import {StarsRating} from "../StarsRating";
 import {useAppSelector} from "../../hooks";
 
 interface IProps extends PropsWithChildren {

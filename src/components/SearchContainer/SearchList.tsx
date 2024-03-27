@@ -1,7 +1,7 @@
 import {FC, PropsWithChildren, useEffect} from 'react';
 import css from "../MoviesContainer/MovieList.module.css";
 import {MoviesListCard} from "../MoviesContainer";
-import {PageSelector} from "../PaginationContainer";
+import {PageSelector} from "../Pagination";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {useSearchParams} from "react-router-dom";
 import {movieListActions} from "../../store";

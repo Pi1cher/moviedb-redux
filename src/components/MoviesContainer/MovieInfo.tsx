@@ -1,11 +1,11 @@
 import {FC, PropsWithChildren, useEffect} from 'react';
 
-import {PosterPreview} from "../PosterContainer";
+import {PosterPreview} from "../Poster";
 import {useParams} from "react-router-dom";
 import {GenreBadge} from "../GenreContainer";
 import css from './MovieInfo.module.css'
-import {BackButton} from "../NavigateButtonsContainer";
-import {StarsRating} from "../StarsRatingContainer";
+import {BackButton} from "../NavigateButtons";
+import {StarsRating} from "../StarsRating";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {movieInfoActions} from "../../store";
 

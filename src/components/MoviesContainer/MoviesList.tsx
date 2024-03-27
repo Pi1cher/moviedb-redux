@@ -3,7 +3,7 @@ import {FC, PropsWithChildren, useEffect} from 'react';
 
 import {MoviesListCard} from "./MoviesListCard";
 import css from './MovieList.module.css'
-import {PageSelector} from "../PaginationContainer";
+import {PageSelector} from "../Pagination";
 import {Genres} from "../GenreContainer";
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {movieListActions} from "../../store";
