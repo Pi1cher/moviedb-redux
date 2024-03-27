@@ -29,6 +29,9 @@
     color: #A43820;
     background-color: #F1D3B2;
 }
+.PageSelector button:disabled {
+    visibility: hidden;
+}
 .PageSelector p{
     display: flex;
     align-items: center;

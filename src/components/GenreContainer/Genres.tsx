@@ -12,7 +12,6 @@ interface IProps extends PropsWithChildren {
 const Genres: FC<IProps> = () => {
 
     const {genres} = useAppSelector(state => state.genres);
-    console.log(genres)
     const dispatch = useAppDispatch();
 
 

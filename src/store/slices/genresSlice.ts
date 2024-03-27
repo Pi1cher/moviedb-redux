@@ -32,8 +32,6 @@ const genresSlice = createSlice({
     extraReducers: builder =>
         builder
             .addCase(getAll.fulfilled, (state, action) => {
-                console.log(action.payload)
-                console.log(state.genres)
                 state.genres = action.payload.genres
             })
 })
