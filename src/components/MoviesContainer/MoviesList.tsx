@@ -26,7 +26,7 @@ const MoviesList: FC<IProps> = () => {
 
     useEffect(() => {
         dispatch(movieListActions.getAll({page, with_genres}))
-    }, [page, with_genres])
+    }, [page, with_genres, dispatch])
 
     return (
         <div>
