@@ -1,10 +1,9 @@
-import {FC, PropsWithChildren, useEffect, useState} from 'react';
+import {FC, PropsWithChildren, useEffect} from 'react';
 
 import {GenreBadge} from "./GenreBadge";
-import {genreService} from "../../services";
-import {IGenre} from "../../interfaces";
 import css from './Genres.module.css'
-import {SetURLSearchParams} from "react-router-dom";
+import {useAppDispatch, useAppSelector} from "../../hooks";
+import {genresActions} from "../../store";
 
 interface IProps extends PropsWithChildren {
 
@@ -12,12 +11,14 @@ interface IProps extends PropsWithChildren {
 
 const Genres: FC<IProps> = () => {
 
-    const [genres, setGenres] = useState<IGenre[]>([]);
+    const {genres} = useAppSelector(state => state.genres);
+    console.log(genres)
+    const dispatch = useAppDispatch();
 
 
     useEffect(() => {
-        genreService.getAll().then(({data}) => setGenres(data.genres))
-    }, [])
+        dispatch(genresActions.getAll())
+    }, [dispatch])
 
     return (
         <div className={css.Genres}>
